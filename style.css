@@ -1,19 +1,25 @@
 @import url();
 
-
 *{
     padding: 0;
     margin: 0;
     border: none;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
+    scroll-behavior: smooth;
 }
 body {
-    background-color: #000000;
-    color: #ededed;
-
-
+    background-image: linear-gradient(#894E4A 1%, #0c0303 99%)
 }
+.logo {
+    max-width: 70px;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 100%;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -41,22 +47,34 @@ body {
     transition: .3s;
 
 
+
 }
-.navbar a:hover,
-.navbar a.active {
+.navbar a:hover {
     color: #f00000;
 }
 
 
 .home {
     height: 100vh;
-    background: url(foto.png.png)no-repeat;
-    background-size: 450px;
-    background-position: right;
+    flex-direction: row-reverse;
     display: flex;
     align-items: center;
     display: flex;
     padding: 0 10%;
+}
+
+img{
+    width: 400px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-25px);
+    }
 }
 
 .home-content{
@@ -66,6 +84,7 @@ body {
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
+    color: #ededed;
 }
 .home-content h3{
     font-size: 32px;
@@ -76,6 +95,7 @@ body {
 .home-content p{
     font-size: 16px;
     margin: 20px 0 40px;
+    color: #ededed;
 
 }
 
@@ -86,6 +106,13 @@ body {
     height: 50px;
 
 }
+
+.sec-sobremim{
+    font-size: 20px;
+    color: #ededed;
+    margin-bottom: 20%;
+}
+
 .btn-box a{
     position: relative;
     box-shadow: 0 0 50px rgb(219, 4, 4),
@@ -106,8 +133,18 @@ body {
 }
 
 .btn-box a:nth-child(2){
-    background: transparent;
-    color: #bb0808;
+    background: #bb0808;
+    color: #f1a5a5;
+}
+
+
+@media screen and (max-witdh: 1020px){
+    .navbar a{
+        display: none;
+    }
+    .home {
+        flex-direction: column-reverse;
+    }
 }
 
 
