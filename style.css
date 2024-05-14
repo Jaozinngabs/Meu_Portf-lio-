@@ -1,152 +1,389 @@
-@import url();
-
-*{
-    padding: 0;
+/* ESTILO GERAL */
+* {
     margin: 0;
-    border: none;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
 }
+
 body {
-    background-image: linear-gradient(#894E4A 1%, #0c0303 99%)
+    background-image: linear-gradient(#66100a 1%, #000000 99%)
+    
 }
-.logo {
-    max-width: 70px;
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.logo{
+    position: fixed;
+    
+}
+
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #7c040e;
+    border: 0;
+    border-radius: 30px;
     cursor: pointer;
+    transition: .2s;
 }
 
-.logo img {
+h2.titulo {
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: #7c040e;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+    box-shadow: 1px 1px 8px #e7071a;
+    transform: scale(1.05);
+}
+
+/* ESTILO DO CABEÇALHO */
+header {
+    padding: 40px 4%;
+}
+
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #5c5c5c;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header nav.menu-desktop a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+/* ESTILO DO MENU MOBILE */
+
+.btn-abrir-menu{
+    display: none;
+}
+
+.btn-abrir-menu i{
+    color: #7c040e;
+    font-size: 40px;
+}
+
+.menu-mobile{
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i{
+    color: #7c040e;
+    font-size: 30px;
+}
+
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}   
+
+.menu-mobile nav ul li a:hover{
+    background-color: #7c040e;
+    color: #000;
+}
+
+.overlay-menu{
+    background-color: #000000df;
     width: 100%;
-}
-
-.header {
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
+    z-index: 88888;
+    display: none;
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
     align-items: center;
-    z-index: 100;
-}
-.logo {
-    font-size: 40px;
-    color: #ededed;
-    text-decoration: none;
-    font-weight: 600;
-}
-.navbar a {
-    font-size: 20px;
-    color: #f8f8f8;
-    text-decoration: none;
-    font-weight: 600;
-    margin-left: 35px;
-    transition: .3s;
-
-
-
-}
-.navbar a:hover {
-    color: #f00000;
-}
-
-
-.home {
-    height: 100vh;
-    flex-direction: row-reverse;
-    display: flex;
-    align-items: center;
-    display: flex;
-    padding: 0 10%;
-}
-
-img{
-    width: 400px;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(-25px);
-    }
-}
-
-.home-content{
-    max-width: 600px;
-}
-.home-content h1{
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #ededed;
-}
-.home-content h3{
-    font-size: 32px;
-    font-weight: 700;
-    color: #bb0808;
-
-}
-.home-content p{
-    font-size: 16px;
-    margin: 20px 0 40px;
-    color: #ededed;
-
-}
-
-.home-content .btn-box{
-    display: flex;
-    justify-content: space-between;
-    width: 345px;
-    height: 50px;
-
-}
-
-.sec-sobremim{
-    font-size: 20px;
-    color: #ededed;
-    margin-bottom: 20%;
-}
-
-.btn-box a{
-    position: relative;
-    box-shadow: 0 0 50px rgb(219, 4, 4),
-    0 0 30px rgb(219, 4, 4);
-    display: inline-flex;
     justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 100%;
-    background-color: #bb0808;
-    border: 2px solid #bb0808;
-    border-radius: 10px;
-    color: #f1a5a5;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    z-index: 1;
+    gap: 90px;
 }
 
-.btn-box a:nth-child(2){
-    background: #bb0808;
-    color: #f1a5a5;
+.topo-do-site h1 {
+    color: #fff;
+    font-size: 42px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: #7c040e;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
 }
 
 
-@media screen and (max-witdh: 1020px){
-    .navbar a{
-        display: none;
+@keyframes flutuar {
+    0% {
+        top: 0;
     }
-    .home {
+
+    100% {
+        top: 30px;
+    }
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especiliadades {
+    padding: 40px 4%;
+}
+
+section.especiliadades .flex {
+    gap: 60px;
+}
+
+.especiliadades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especiliadades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffffff78;
+}
+
+.especiliadades .especialidades-box i {
+    font-size: 70px;
+    color: #7c040e;
+}
+
+.especiliadades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO DO SOBRE */
+section.sobre {
+    padding: 80px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #7c040e;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #7c040e;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+
+/* ESTILO DO RODAPÉ */
+
+footer {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+.borda {
+    border-top: 2px solid #7c040e;
+}
+
+footer .line-footer p i {
+    color: #7c040e;
+    font-size: 22px;
+}
+
+footer .line-footer p a {
+    color: #fff;
+}
+
+@media screen and (max-width: 1020px) {
+
+    /* CLASSES GERAIS */
+    .flex {
+        flex-direction: column;
+    }
+
+    .topo-do-site .flex{
         flex-direction: column-reverse;
     }
+
+    h2.titulo {
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    /* CABEÇALHO */
+    .menu-desktop,
+    .btn-contato {
+        display: none;
+    }
+
+    /* TOPO DO SITE */
+
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1 {
+        font-size: 30px;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+    }
+
+    /* ESPECIALIDADES */
+    section.especiliadades {
+        padding: 40px 8%;
+    }
+
+    /* SOBRE */
+    section.sobre {
+        padding: 80px 8%;
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center;
+    }
+    
+    .btn-social{
+        text-align: center;
+    }
+
+    .img-sobre img{
+        width: 100%;
+    }
+
+    /* PORTFÓLIO */
+    section.portfolio {
+        padding: 80px 8%;
+    }
+
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    
+    section.portfolio .flex {
+       gap: 60px;
+    }
+
+    /* RODAPÉ */
+    footer .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer {
+        text-align: center;
+    }
 }
-
-
-
-
