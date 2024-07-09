@@ -214,7 +214,7 @@ section.especiliadades .flex {
 
 .especiliadades .especialidades-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #ffffff78;
+    box-shadow: 0 0 20px #7c040e;
 }
 
 .especiliadades .especialidades-box i {
