@@ -1,4 +1,7 @@
 /* ESTILO GERAL */
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Matemasie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jim+Nightshade&family=Matemasie&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +10,63 @@
 }
 
 body {
-    background-color: #000;
+    background-image: linear-gradient( 90deg ,#000 , #0d0b53, #020124  );    
+    background-size: 500% 100%;
+    animation: degrade-animado 5s  infinite alternate ;
     
+}
+
+.txt-animado {
+    font-size: 45px;
+    font-weight: 300;
+    color: #fff;
+    font-family: "Matemasie", sans-serif;
+
+}
+.txt-animado span{
+    position: relative;
+    font-family: "Matemasie", sans-serif;
+}
+
+.txt-animado span::before{
+    content:"";
+    color: #e6800b;
+    animation: palavras 5s infinite;
+    
+}
+
+@keyframes palavras {
+    0%,50% {
+        content: "bão?";
+    }
+    51%,100%{
+        content: "esse filme é massa";
+    }
+
+}
+
+.txt-animado span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid #e6800b;
+    right: -10px;
+}
+
+@keyframes cursor {
+    0%{
+        opacity: 0;
+    }
+    
+}
+
+@keyframes degrade-animado {
+    0% {
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 100%;
+    }
 }
 
 .interface {
@@ -29,7 +87,7 @@ body {
     padding: 10px 40px;
     font-size: 18px;
     font-weight: 600;
-    background-color: #7c040e;
+    background-color: #e6800b;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
@@ -40,15 +98,17 @@ h2.titulo {
     color: #fff;
     font-size: 38px;
     text-align: center;
+    font-family: "Jim Nightshade", cursive;
 }
 
 h2.titulo span {
-    color: #7c040e;
+    color: #e6800b;
+    font-family: "Jim Nightshade", cursive;
 }
 
 button:hover,
 form .btn-enviar input:hover {
-    box-shadow: 1px 1px 8px #e7071a;
+    box-shadow: 1px 1px 8px #e6800b;
     transform: scale(1.05);
 }
 
@@ -71,7 +131,7 @@ header a {
 }
 
 header nav.menu-desktop a:hover {
-    color: #fff;
+    color: #e6800b;
     transform: scale(1.05);
 }
 
@@ -91,12 +151,12 @@ header nav.menu-desktop ul li {
 }
 
 .btn-abrir-menu i{
-    color: #7c040e;
+    color: #e6800b;
     font-size: 40px;
 }
 
 .menu-mobile{
-    background-color: #000;
+    background: linear-gradient(#000 , #020124 );
     height: 100vh;
     position: fixed;
     top: 0;
@@ -121,7 +181,7 @@ header nav.menu-desktop ul li {
 }
 
 .menu-mobile .btn-fechar i{
-    color: #7c040e;
+    color: #e6800b;
     font-size: 30px;
 }
 
@@ -138,7 +198,7 @@ header nav.menu-desktop ul li {
 }   
 
 .menu-mobile nav ul li a:hover{
-    background-color: #7c040e;
+    background-color: #e6800b;
     color: #000;
 }
 
@@ -171,7 +231,7 @@ section.topo-do-site .flex {
 }
 
 .topo-do-site .txt-topo-site h1 span {
-    color: #7c040e;
+    color: #e6800b;
 }
 
 .topo-do-site .txt-topo-site p {
@@ -179,21 +239,6 @@ section.topo-do-site .flex {
     margin: 40px 0;
 }
 
-.topo-do-site .img-topo-site img {
-    position: relative;
-    animation: flutuar 2s ease-in-out infinite alternate;
-}
-
-
-@keyframes flutuar {
-    0% {
-        top: 0;
-    }
-
-    100% {
-        top: 30px;
-    }
-}
 
 /* ESTILO DAS ESPECIALIDADES */
 section.especiliadades {
@@ -214,12 +259,12 @@ section.especiliadades .flex {
 
 .especiliadades .especialidades-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #7c040e;
+    box-shadow: 0 0 20px #e6800b;
 }
 
 .especiliadades .especialidades-box i {
     font-size: 70px;
-    color: #7c040e;
+    color: #e6800b;
 }
 
 .especiliadades .especialidades-box h3 {
@@ -248,7 +293,7 @@ section.sobre .flex {
 }
 
 .sobre .txt-sobre h2 span {
-    color: #7c040e;
+    color: #e6800b;
     display: block;
 }
 
@@ -262,7 +307,7 @@ section.sobre .flex {
     height: 60px;
     border-radius: 50%;
     border: none;
-    background-color: #7c040e;
+    background-color: #e6800b;
     font-size: 22px;
     cursor: pointer;
     margin: 0 5px;
@@ -270,11 +315,13 @@ section.sobre .flex {
 }
 
 
+
 /* ESTILO DO RODAPÉ */
 
 footer {
-    padding: 40px 4%;
-    box-shadow: 0 0 40px 10px #ffffff1d;
+    padding: 40px 4%;   
+    box-shadow: 0 0 40px 10px #000;
+    background-color: #000;
 }
 
 footer .flex {
@@ -286,11 +333,11 @@ footer .line-footer {
 }
 
 .borda {
-    border-top: 2px solid #7c040e;
+    border-top: 2px solid #e6800b;
 }
 
 footer .line-footer p i {
-    color: #7c040e;
+    color: #e6800b;
     font-size: 22px;
 }
 
@@ -387,3 +434,150 @@ footer .line-footer p a {
         text-align: center;
     }
 }
+body {
+    background-color: #333;
+    font-family: Arial, sans-serif;
+}
+
+header a {
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header nav.menu-desktop a:hover {
+    color: #e6800b;
+    transform: scale(1.05);
+}
+
+@keyframes header-anim {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: scale(0.5);
+    animation: nav-anim 1s forwards;
+}
+
+@keyframes nav-anim {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transform: scale(0.5);
+    animation: main-anim 1s forwards;
+}
+
+@keyframes main-anim {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+footer {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    transform: scale(0.5);
+    animation: footer-anim 1s forwards;
+}
+
+@keyframes footer-anim {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+section {
+    transform: scale(0.5);
+    animation: section-anim 1s forwards;
+}
+
+@keyframes section-anim {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+img {
+    transform: scale(0.5);
+    animation: img-anim 1s forwards;
+}
+
+@keyframes img-anim {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}   
+
+nav.menu-desktop ul li a {
+    position: relative; /* adicionado position relative para que a linha seja posicionada corretamente */
+    transition: color 0.2s; /* transição para cor */
+}
+
+nav.menu-desktop ul li a::after {
+    content: ""; /* adicionado pseudo-elemento ::after */
+    position: absolute; /* posicionamento absoluto para a linha */
+    bottom: 0; /* linha fica embaixo do texto */
+    left: 0; /* linha começa do lado esquerdo */
+    width: 0; /* largura inicial da linha é 0 */
+    height: 2px; /* altura da linha */
+    background-color: #e6800b; /* cor da linha é laranja */
+    transition: width 0.2s; /* transição para largura da linha */
+}
+
+nav.menu-desktop ul li a:hover {
+    color: #e6800b; /* cor laranja ao passar o mouse */
+}
+
+nav.menu-desktop ul li a:hover::after {
+    width: 100%; /* largura da linha aumenta para 100% ao passar o mouse */
+}   
+
+.spotify-link {
+    color: #1DB954; /* cor do link */
+    font-size: 18px; /* tamanho do ícone */
+  }
+
+  .img-sobre-gif {
+    position: absolute; /* posição absoluta para que a imagem fique no lado direito */
+    top: 20px; /* distância do topo */
+    right: 20px; /* distância da direita */
+  }
+  
